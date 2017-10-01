@@ -46,6 +46,20 @@
           <div class="rs-data" ID="st-anon"></div>
           <div class="rs-data" ID="st-user"></div>
           <div ID="stInfo">{TOTAL_USERS_ONLINE}</div>
+          <script>
+            $(function () {
+              var fastats = document.getElementById('stInfo').innerHTML;
+              var spstats = fastats.split(" ");
+              var stuser = spstats[7];
+              var sthidden = spstats[9];
+              var stguest = spstats[12];
+              
+              $('#st-user').append( stuser + '<span> USUARIOS</span>');
+              $('#st-hid').append( sthidden + '<span> OCULTOS</span>');
+              $('#st-anon').append( stguest + '<span> INVITADOS</span>');
+              $('#stInfo').empty();
+              });
+          </script>
         </div>
         
         <div class="rsbox rs-online">
