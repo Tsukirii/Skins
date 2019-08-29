@@ -1,0 +1,134 @@
+{JAVASCRIPT}
+
+<!-- BEGIN switch_user_login_form_header -->
+<div class="panel">
+	<div class="inner"><span class="corners-top"><span></span></span>
+		<form action="{S_LOGIN_ACTION}" method="post" name="form_login">
+			<div class="user_login_form center">
+				<label>{L_USERNAME} : <input class="post" type="text" size="10" name="username" /></label>&nbsp;
+				<label>{L_PASSWORD} : <input class="post" type="password" size="10" name="password" /></label>&nbsp;
+				<label>{L_AUTO_LOGIN} : <input class="radio" type="checkbox" name="autologin" {AUTOLOGIN_CHECKED} /></label>&nbsp;
+				{S_HIDDEN_FIELDS}<input class="mainoption button1" type="submit" name="login" value="{L_LOGIN}" />
+				<!-- BEGIN switch_fb_connect -->
+				<span class="fb_or">{switch_user_login_form_header.switch_fb_connect.L_OR}</span>
+				<fb:login-button size="large" onlogin="window.location='/facebook_connect.forum'" scope="{switch_user_login_form_footer.switch_fb_connect.L_FB_PERMISSIONS}">{switch_user_login_form_footer.switch_fb_connect.L_FB_LOGIN_BUTTON}</fb:login-button>
+				<!-- END switch_fb_connect -->
+			</div>
+		</form>
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+<!-- END switch_user_login_form_header -->
+
+<!-- BEGIN message_admin_index -->
+	<div class="panel introduction">
+		<div class="inner"><span class="corners-top"><span></span></span>
+	<!-- BEGIN message_admin_titre -->
+		<div class="h3">{message_admin_index.message_admin_titre.MES_TITRE}</div>
+	<!-- END message_admin_titre -->
+
+	<!-- BEGIN message_admin_txt -->
+		<div class="mes-txt">{message_admin_index.message_admin_txt.MES_TXT}</div>
+	<!-- END message_admin_txt -->
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+<!-- END message_admin_index -->
+
+{CHATBOX_TOP}
+{BOARD_INDEX}
+
+<!-- BEGIN disable_viewonline -->
+
+<div ID="cherrystats">
+    
+    <div ID="cherrysimg"></div>
+    
+    <div ID="cherryinfo">
+        <div class="appricot_title">¿Quien está en linea?</div>
+        <div class="appricot_right">{LOGGED_IN_USER_LIST}</div>
+        <div ID="appricot_left">{TOTAL_USERS_ONLINE} {RECORD_USERS} {TOTAL_CHATTERS_ONLINE}</div>        
+
+        <div class="appricot_title" style="text-align: right;">Ultimas 48 horas</div>
+        <div class="appricot_box">{L_ONLINE_USERS}{L_CONNECTED_MEMBERS}</div>
+
+        <div class="appricot_stats">
+            {TOTAL_POSTS}
+            <br/>
+            <span class="appri_label">Mensajes</span>
+        </div>
+        <div class="appricot_stats">
+            {TOTAL_USERS}
+            <br/>
+            <span class="appri_label">Usuarios</span>
+        </div>
+        <div class="appricot_stats">
+            {NEWEST_USER}
+            <br/>
+            <span class="appri_label">Bienvenido!</span>
+        </div>
+    </div>
+    
+    <div ID="cherry_legend">
+        <div class="cherrygps gp1"><a href="/" title="Ejemplo">Ejemplo</a></div>
+        <div class="cherrygps gp2"><a href="/" title="Ejemplo">Ejemplo</a></div>
+        <div class="cherrygps gp3"><a href="/" title="Ejemplo">Ejemplo</a></div>
+        <div class="cherrygps gp4"><a href="/" title="Ejemplo">Ejemplo</a></div>
+        <div class="cherrygps gp5"><a href="/" title="Ejemplo">Ejemplo</a></div>
+        <div class="cherrygps gp6"><a href="/" title="Ejemplo">Ejemplo</a></div>
+        <div class="cherrygps gp7"><a href="/" title="Ejemplo">Ejemplo</a></div>
+        <div class="cherrygps gp8"><a href="/" title="Ejemplo">Ejemplo</a></div>
+        <div class="cherrygps gp9"><a href="/" title="Ejemplo">Ejemplo</a></div>
+        <div class="cherrygps gp10"><a href="/" title="Ejemplo">Ejemplo</a></div>
+        <div class="cherrygps gp11"><a href="/" title="Ejemplo">Ejemplo</a></div>
+        <div class="cherrygps gp12"><a href="/" title="Ejemplo">Ejemplo</a></div>
+    </div>
+
+</div>
+<!-- END disable_viewonline -->
+
+{CHATBOX_BOTTOM}
+
+<!-- BEGIN switch_user_login_form_footer -->
+<div class="panel">
+	<div class="inner"><span class="corners-top"><span></span></span>
+		<form action="{S_LOGIN_ACTION}" method="post" name="form_login">
+			<div class="user_login_form center">
+				<label>{L_USERNAME} : <input class="post" type="text" size="10" name="username" /></label>&nbsp;
+				<label>{L_PASSWORD} : <input class="post" type="password" size="10" name="password" /></label>&nbsp;
+				<label>{L_AUTO_LOGIN} : <input class="radio" type="checkbox" name="autologin" {AUTOLOGIN_CHECKED} /></label>&nbsp;
+				{S_HIDDEN_FIELDS}<input class="mainoption button1" type="submit" name="login" value="{L_LOGIN}" />
+				<!-- BEGIN switch_fb_connect -->
+				<span class="fb_or">{switch_user_login_form_footer.switch_fb_connect.L_OR}</span>
+				<fb:login-button size="large" onlogin="window.location='/facebook_connect.forum'" scope="{switch_user_login_form_footer.switch_fb_connect.L_FB_PERMISSIONS}">{switch_user_login_form_footer.switch_fb_connect.L_FB_LOGIN_BUTTON}</fb:login-button>
+				<!-- END switch_fb_connect -->
+			</div>
+		</form>
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+<!-- END switch_user_login_form_footer -->
+
+<br style="clear:both" />
+
+{AUTO_DST}
+
+<!-- BEGIN switch_fb_index_login -->
+<div id="fb-root"></div>
+<script>
+    FB.init({
+      appId      : {switch_fb_index_login.FACEBOOK_APP_ID}, 
+      cookie     : true,
+      xfbml      : true,
+      oauth      : true,
+      version    : 'v2.3'
+    });
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- END switch_fb_index_login -->
+
+<div ID="contenedor-afiliados"></div>
