@@ -1,0 +1,135 @@
+<!-- BEGIN topics_list_box -->
+<!-- BEGIN row -->
+<!-- BEGIN header_table -->
+	<!-- BEGIN multi_selection -->
+		<script type="text/javascript">
+
+		function check_uncheck_main_{topics_list_box.row.header_table.BOX_ID}()
+		{
+			alert('MAIN');
+
+			var all_checked = true;
+
+			for (i = 0; (i < document.{topics_list_box.FORMNAME}.elements.length) && all_checked; i++)
+			{
+				if (document.{topics_list_box.FORMNAME}.elements[i].name == '{topics_list_box.FIELDNAME}[]{topics_list_box.row.header_table.BOX_ID}')
+				{
+					all_checked = document.{topics_list_box.FORMNAME}.elements[i].checked;
+				}
+			}
+
+			document.{topics_list_box.FORMNAME}.all_mark_{topics_list_box.row.header_table.BOX_ID}.checked = all_checked;
+		}
+
+		function check_uncheck_all_{topics_list_box.row.header_table.BOX_ID}()
+		{
+			alert('ALL');
+
+			for (i = 0; i < document.{topics_list_box.FORMNAME}.length; i++)
+			{
+				if (document.{topics_list_box.FORMNAME}.elements[i].name == '{topics_list_box.FIELDNAME}[]{topics_list_box.row.header_table.BOX_ID}')
+				{
+					document.{topics_list_box.FORMNAME}.elements[i].checked = document.{topics_list_box.FORMNAME}.all_mark_{topics_list_box.row.header_table.BOX_ID}.checked;
+				}
+			}
+		}
+
+		</script>
+	<!-- END multi_selection -->
+
+	<div class="forumbg announcement">
+		<div class="inner"><span class="corners-top"><span></span></span>
+		<ul class="topiclist topics">
+			<li class="passionfruit">
+				<dl class="icon">
+					<dt>
+						<!-- BEGIN multi_selection -->
+						<input onclick="check_uncheck_all_{topics_list_box.row.header_table.BOX_ID}();" type="checkbox" name="all_mark_{topics_list_box.row.header_table.BOX_ID}" value="0" />
+						<!-- END multi_selection -->
+						{topics_list_box.row.L_TITLE}
+					</dt>
+				</dl>
+			</li>
+			<span class="sf sf-stars-o"></span>
+		</ul>
+		<ul class="topiclist topics bg_none">
+<!-- END header_table -->
+
+<!-- BEGIN header_row -->
+		<strong>{topics_list_box.row.L_TITLE}</strong>
+<!-- END header_row -->
+
+<!-- BEGIN topic -->
+
+	<!-- BEGIN table_sticky -->
+			</ul>
+			<span class="corners-bottom"><span></span></span></div>
+		</div>
+		<div class="forumbg">
+		<div class="inner"><span class="corners-top"><span></span></span>
+		<ul class="topiclist topics">
+			<li class="passionfruit">
+				<dl class="icon">
+					<dt>
+						<!-- BEGIN multi_selection -->
+						<input onclick="check_uncheck_all_{topics_list_box.row.header_table.BOX_ID}();" type="checkbox" name="all_mark_{topics_list_box.row.header_table.BOX_ID}" value="0" />
+						<!-- END multi_selection -->
+						{topics_list_box.row.topic.table_sticky.L_TITLE}
+					</dt>
+				</dl>
+			</li>
+			<span class="sf sf-stars-o"></span>
+		</ul>
+		<ul class="topiclist topics bg_none">
+	<!-- END table_sticky -->
+
+		<div class="pomelo">
+			<div class="pomelo-icon" style="background-image:url('{topics_list_box.row.TOPIC_FOLDER_IMG}');"></div>
+			<div class="pomelo-topic">
+				<div class="pomelo-type">{topics_list_box.row.TOPIC_TYPE}</div>
+				<div class="pomelo-title"><a class="topictitle" href="{topics_list_box.row.U_VIEW_TOPIC}">{topics_list_box.row.TOPIC_TITLE}</a></div>
+				<div class="pomelo-author"><span class="span-tab">{topics_list_box.row.L_BY} <strong>{topics_list_box.row.TOPIC_AUTHOR}</strong></span></div>
+				<div class="pomelo-nav">{topics_list_box.row.GOTO_PAGE_NEW}</div>
+			</div>
+			<div class="pomelo-stats">
+				<div class="pposts">
+					<em>{topics_list_box.row.REPLIES}</em>
+					<br/>
+					posts
+				</div>
+				<div class="pviews">
+					<em>{topics_list_box.row.VIEWS}</em>
+					<br/>
+					views
+				</div>
+			</div>
+			<div class="pomelo-latest">
+				<div class="pomelo-avi">
+					<!-- BEGIN avatar -->
+                    	{topics_list_box.row.topic.avatar.LAST_POST_AVATAR}
+                    <!-- END avatar -->
+				</div>
+				<div class="pomelo-info">
+					<span>{topics_list_box.row.LAST_POST_AUTHOR}&nbsp;
+					{topics_list_box.row.LAST_POST_IMG}<br style="clear:left;" />{topics_list_box.row.LAST_POST_TIME}</span>
+				</div>
+			</div>
+		</div>
+
+<!-- END topic -->
+<!-- BEGIN no_topics -->
+<li class="row row1">
+	<dl>
+		<dt><strong>{topics_list_box.row.L_NO_TOPICS}</strong></dt>
+	</dl>
+</li>
+<!-- END no_topics -->
+
+<!-- BEGIN bottom -->
+</ul>
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+<!-- END bottom -->
+<!-- BEGIN spacer --><br /><!-- END spacer -->
+<!-- END row -->
+<!-- END topics_list_box -->
